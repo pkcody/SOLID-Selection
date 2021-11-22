@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightSelectionResponse : MonoBehaviour
+public class HighlightSelectionResponse : MonoBehaviour, ISelectionResponse
 {
     [SerializeField] public Material highlightMaterial;
     [SerializeField] public Material defaultMaterial;
 
-    private void OnSelect(Transform selection)
+    public void OnSelect(Transform selection)
     {
         var selectionRenderer = selection.GetComponent<Renderer>();
         if (selectionRenderer != null)
@@ -16,7 +16,7 @@ public class HighlightSelectionResponse : MonoBehaviour
         }
     }
 
-    private void OnDeselect(Transform selection)
+    public void OnDeselect(Transform selection)
     {
         var selectionRenderer = selection.GetComponent<Renderer>();
         if (selectionRenderer != null)

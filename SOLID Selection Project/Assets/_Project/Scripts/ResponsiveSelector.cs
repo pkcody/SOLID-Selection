@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResponsiveSelector : MonoBehaviour, ISelector
 {
-    [SerializeField] private List<Selectable> selectables;
+    [SerializeField] private List<Transform> selectables;
     [SerializeField] private float threshold= 0.97f;
 
     private Transform _selection;
@@ -22,7 +22,7 @@ public class ResponsiveSelector : MonoBehaviour, ISelector
 
             var lookpercentage = Vector3.Dot(vector1.normalized, vector2.normalized);
 
-            selectables[i].LookPercentage = lookpercentage;
+            //selectables[i].LookPercentage = lookpercentage;
 
             if(lookpercentage > threshold && lookpercentage > closest)
             {
